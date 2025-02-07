@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {
   todoReducer,
+  setNewTodo,
   addTodo,
   toggleTodo,
   removeTodo,
@@ -8,8 +9,8 @@ import {
 
 const store = configureStore({
   reducer: {
-    todos: todoReducer,
+    todo: todoReducer,
   },
 });
 
-export { store, addTodo, toggleTodo, removeTodo };
+export { store, setNewTodo, addTodo, toggleTodo, removeTodo };
