@@ -23,22 +23,24 @@ export default function TodoForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="-mt-10 ml-5 flex">
-      <input
-        type="text"
-        name="newTodo"
-        id="newTodo"
-        value={newTodo}
-        onChange={handleTextChange}
-        className="rounded-full bg-gray-200 border-gray-200 p-2.5 pl-5 focus:outline-none m-auto sm:w-[85%] sm:items-stretch"
-        placeholder="Add your task"
-      />
-      <button
-        type="submit"
-        className="bg-[#2f6ca2] uppercase font-semibold text-white rounded-full p-2.5 px-5 -ml-8 cursor-pointer sm:-ml-20"
-      >
-        Add
-      </button>
+    <form onSubmit={handleSubmit} className="-mt-10">
+      <div className="relative flex">
+        <input
+          type="text"
+          name="newTodo"
+          id="newTodo"
+          value={newTodo}
+          onChange={handleTextChange}
+          className="rounded-full bg-gray-200 border-gray-200 p-2.5 pl-5 focus:outline-none m-auto min-[400px]:w-[85%] sm:w-[85%] sm:items-stretch md:w-[95%] lg:w-[70%] xl:w-[75%]"
+          placeholder="Add your task"
+        />
+        <button
+          type="submit"
+          className="absolute bg-[#2f6ca2] uppercase font-semibold text-white rounded-full p-2.5 px-5 right-4 cursor-pointer lg:right-24 xl:right-32 2xl:right-40"
+        >
+          Add
+        </button>
+      </div>
     </form>
   );
 }

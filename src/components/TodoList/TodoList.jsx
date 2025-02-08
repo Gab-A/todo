@@ -73,17 +73,16 @@ export default function TodoList() {
   const renderedActiveTodosList = renderTodoList(filteredActiveTodos, false);
 
   return (
-    <div className="p-6 space-y-4">
+    <div className="p-6 space-y-4 h-full ">
       <div className={dividerStyles}></div>
-      <div className="min-[360px]:h-24 min-[390px]:h-40">
+      <div className="h-2/5">
         <h1 className={sectionTitleStyles}>Todo Tasks</h1>
         {renderedActiveTodosList}
       </div>
-      <div className={dividerStyles}>
-        <div>
-          <h1 className={sectionTitleStyles}>Completed Tasks</h1>
-          {renderedCompletedTodosList}
-        </div>
+      <div className={dividerStyles}></div>
+      <div>
+        <h1 className={sectionTitleStyles}>Completed Tasks</h1>
+        {renderedCompletedTodosList}
       </div>
     </div>
   );
