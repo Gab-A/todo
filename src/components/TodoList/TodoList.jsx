@@ -27,15 +27,17 @@ export default function TodoList() {
   const dividerStyles = "border-t-[1.5px] border-[#feefe0] mt-4";
   const sectionTitleStyles = "text-[#2f6ca2] font-bold uppercase mt-5 text-lg";
 
-  const renderTodoList = (todos, isCompleted) => {
+  const renderTodoList = (todos) => {
     return todos.map((todo) => (
       <div key={todo.id} className="flex justify-between">
         <div className="flex items-center gap-2 mt-2">
           <button
-            className={`${isCompleted ? completedBtnStyles : activeBtnStyles}`}
+            className={`${
+              todo.completed ? completedBtnStyles : activeBtnStyles
+            }`}
             onClick={() => toggleTodoHandler(todo.id)}
           >
-            {isCompleted && (
+            {todo.completed && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -52,12 +54,18 @@ export default function TodoList() {
               </svg>
             )}
           </button>
-          <p className="font-light text-lg">{todo.text}</p>
+          <p
+            className={`${
+              todo.completed && "line-through text-[#808080]"
+            } font-light text-lg`}
+          >
+            {todo.text}
+          </p>
         </div>
         <div className="flex">
           <button
             onClick={() => removeTodoHandler(todo.id)}
-            className="font-bold text-lg text-[#2f6ca2] cursor-pointer"
+            className="font-bold text-lg text-[#2f6ca2] cursor-pointer hover:text-red-700 transform transition-transform hover:scale-110"
           >
             X
           </button>
@@ -66,11 +74,8 @@ export default function TodoList() {
     ));
   };
 
-  const renderedCompletedTodosList = renderTodoList(
-    filteredCompletedTodos,
-    true
-  );
-  const renderedActiveTodosList = renderTodoList(filteredActiveTodos, false);
+  const renderedCompletedTodosList = renderTodoList(filteredCompletedTodos);
+  const renderedActiveTodosList = renderTodoList(filteredActiveTodos);
 
   return (
     <div className="p-6 space-y-4 h-full ">

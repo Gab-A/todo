@@ -36,7 +36,7 @@ export default function TodoForm() {
         />
         <button
           type="submit"
-          className="absolute bg-[#2f6ca2] uppercase font-semibold text-white rounded-full p-2.5 px-5 right-4 cursor-pointer lg:right-24 xl:right-32 2xl:right-40"
+          className="absolute bg-[#2f6ca2] hover:bg-[#255482] uppercase font-semibold text-white rounded-full p-2.5 px-5 right-4 cursor-pointer transition active:scale-95 lg:right-30 xl:right-32 2xl:right-40"
         >
           Add
         </button>

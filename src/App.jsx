@@ -8,9 +8,9 @@ function App() {
     <div className="flex justify-center items-center h-screen m-auto">
       <div className="flex flex-col bg-white h-[75%] w-[85%] rounded-lg shadow-lg p-6 lg:h-[80%]">
         <div className="flex flex-col justify-center">
-          <a href="/">
+          <a href="/" className="m-auto">
             {" "}
-            <img src={todoLogo} alt="todo-log" className="w-40 m-auto" />
+            <img src={todoLogo} alt="todo-logo" className="w-40 m-auto" />
           </a>
           <TodoForm />
         </div>
