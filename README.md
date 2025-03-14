@@ -20,7 +20,7 @@ A simple todo app that allows users to add, toggle, and delete their todos. Todo
 
 ## Screenshot:
 
-![Todo App Screenshot](src/assets/images/todo-app.png)
+![Todo App Screenshot](src/assets/images/todo.png)
 
 ## Sitemap:
 
